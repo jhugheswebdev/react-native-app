@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {View, Text, FlatList} from 'react-native';
 
 import {contacts} from '../config/data';
@@ -6,6 +6,10 @@ import colors from '../config/colors';
 import {ListItem} from '../components/ListItem';
 
 class Contacts extends Component {
+  handleRowPress = (item) => {
+    return null;
+  };
+
   render() {
     return (
       <FlatList

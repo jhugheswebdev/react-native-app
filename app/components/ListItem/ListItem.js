@@ -7,6 +7,7 @@ import {capitalizeFirstLetter} from '../../helpers/string';
 import colors from '../../config/colors';
 
 const ListItem = ({contact, onPress}) => {
+  const name = `${capitalizeFirstLetter(contact.name.first)} ${capitalizeFirstLetter(contact.name.last)}`
   return (
     <TouchableHighlight
       onPress={onPress}
@@ -16,6 +17,20 @@ const ListItem = ({contact, onPress}) => {
           source={{ uri: contact.picture.thumbnail}}
           style={styles.avatar}
         />
+        <View>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.email}>{contact.email}</Text>
+        </View>
+        <View style={styles.chevronContainer}>
+          <Icon 
+            name="ios-arrow-forward"
+            size={CHEVRON_SIZE}
+            color={colors.subtleText}
+            style={styles.chevron}
+          />
+        
+          
+        </View>
       </View>
 
     </TouchableHighlight>
